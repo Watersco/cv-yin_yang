@@ -2,8 +2,8 @@ let html = document.querySelector("#html");
 let string = `/*
 你好，我是一名前端小白
 今天要画的是一只叫八卦的大熊猫
-让你见识一下我的前端功底 (っ•̀ω•́)っ✎⁾⁾
-*/;`;
+这就让你见识一下我的前端功底 (っ•̀ω•́)っ✎⁾⁾
+*/`;
 let string2 = ""; //为了空格回车
 
 let n = 0; //为了测量字符
@@ -15,7 +15,14 @@ let step = () => {
   setTimeout(() => {
     //创建闹钟
     console.log(n); //当前输出的是哪一个字符
-    html.innerHTML = string[n]; //n 要打印出来
+    if (string[n] === "\n") {
+      string2 += "<br>";
+    } else if ((string[n] = "")) {
+      string2 += string2 + "&nbsp";
+    } else {
+      string2 += string[n];
+    }
+    html.innerHTML = string2; //n 要打印出来
     n += 1;
     if (n < string.length) {
       step(); //判断:如果n小于字符串总长度就重新运行
