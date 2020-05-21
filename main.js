@@ -5,13 +5,13 @@ let string = `
 /*
 你好，我是一名前端小白
 今天要画的是一只叫八卦的大熊猫
-这就让你见识一下我的前端功底 (っ•̀ω•́)っ✎⁾⁾
+让你见识一下我的前端功底(っ•̀ω•́)っ✎⁾⁾
 */
 
 /*首先，画一个正方形*/
 #div1 {
-    height: 400px;
-    width: 400px;
+    height: 200px;
+    width: 200px;
     border: 2px solid grey;
   }  
   
@@ -45,7 +45,7 @@ let string = `
 /*完成！
   什么，你说不像？
   仔细看，它在睡觉zzZ*/
-  
+
 `;
 
 let string2 = ""; //为了空格回车
@@ -58,8 +58,8 @@ let step = () => {
   //给闹钟个插个电
   setTimeout(() => {
     //创建闹钟
-    console.log(n); //输出当前的字符下标号
-    console.log(string2); //输出当前字符
+    // console.log(n);输出当前的字符下标号
+    //console.log(string2); 输出当前字符
     if (string[n] === "\n") {
       string2 += "<br>";
     } else if (string[n] === " ") {
@@ -69,11 +69,13 @@ let step = () => {
     }
     html.innerHTML = string2; //n 要打印出来
     style.innerHTML = string.substring(0, n);
+    window.scrollTo(0, 99999);
+    html.scrollTo(0, 99999);
     n += 1;
     if (n < string.length) {
       step(); //判断:如果n小于字符串总长度就重新运行
     } else {
     }
-  }, 0);
+  }, 50);
 };
 step();
